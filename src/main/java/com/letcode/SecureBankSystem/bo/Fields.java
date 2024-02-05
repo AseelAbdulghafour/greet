@@ -1,4 +1,4 @@
-package com.letcode.SecureBankSystem.controller;
+package com.letcode.SecureBankSystem.bo;
 
 public class Fields {
 

@@ -1,5 +1,7 @@
 package com.letcode.SecureBankSystem.controller;
 
+import com.letcode.SecureBankSystem.bo.Contact;
+import com.letcode.SecureBankSystem.bo.Fields;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +41,7 @@ public class CodedController {
 
     private boolean contactExists(String name) {
         return contacts.stream().anyMatch(c -> c.getName().equals(name));
+
     }
 
     @GetMapping("/getContactDetails")
