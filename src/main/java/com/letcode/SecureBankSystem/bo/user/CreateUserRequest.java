@@ -1,7 +1,6 @@
 package com.letcode.SecureBankSystem.bo.user;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.letcode.SecureBankSystem.bo.Status;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CreateUserRequest {

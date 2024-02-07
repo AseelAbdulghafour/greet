@@ -1,12 +1,11 @@
 package com.letcode.SecureBankSystem.controller.UserController;
 
-import com.letcode.SecureBankSystem.bo.Status;
 import com.letcode.SecureBankSystem.bo.user.CreateUserRequest;
+import com.letcode.SecureBankSystem.bo.user.UpdateUserRequest;
+import com.letcode.SecureBankSystem.bo.user.UpdateUserStatusRequest;
 import com.letcode.SecureBankSystem.service.UserService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -16,15 +15,29 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-     @PostMapping("/create-user")
-    public ResponseEntity<String> createUser(CreateUserRequest createUserRequest){
-        userService.saveUser(createUserRequest);
-        return ResponseEntity.ok("User created successfully");
-     }
 
-     @PostMapping("/updateStatus")
-    public ResponseEntity<String> updateStatus(@RequestParam String status){
-        userService.status(status);
-        return ResponseEntity.ok("Status update successfully");
-     }
+    @PostMapping("/create-user")
+    public ResponseEntity<String> createUser(@RequestBody CreateUserRequest createUserRequest) {
+        try {
+            userService.saveUser(createUserRequest);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+
+        }
+        return ResponseEntity.ok("User created successfully");
+
+    }
+
+    @PutMapping("/update-user-status")
+    public ResponseEntity<String> updateUser(@RequestParam Long userId, @RequestBody UpdateUserStatusRequest updateUserStatusRequest) {
+        try {
+            userService.updateUserStatus(userId, updateUserStatusRequest);
+        } catch (IllegalArgumentException e) {
+
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+        return ResponseEntity.ok("User Updated successfully");
+
+    }
 }
+
