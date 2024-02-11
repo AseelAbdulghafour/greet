@@ -3,7 +3,7 @@ package com.letcode.SecureBankSystem.bo;
 public class Contact {
     private String name;
     private String email;
-    private Long phone;
+    private String phone;
 
     public String getName() {
         return name;
@@ -13,7 +13,6 @@ public class Contact {
         this.name = name;
     }
 
-
     public String getEmail() {
         return email;
     }
@@ -22,11 +21,11 @@ public class Contact {
         this.email = email;
     }
 
-    public Long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 }

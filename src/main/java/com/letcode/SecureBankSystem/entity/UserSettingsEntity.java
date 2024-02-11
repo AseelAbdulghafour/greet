@@ -9,34 +9,20 @@ import javax.persistence.*;
 public class UserSettingsEntity {
 
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id",nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private boolean recieveNewletter;
+    private boolean receiveNewsLetter;
 
     private String preferredLanguage;
 
-
-
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
-
-    public Long getId() {
-        return id;
+    public boolean isReceiveNewsLetter() {
+        return receiveNewsLetter;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public boolean isRecieveNewletter() {
-        return recieveNewletter;
-    }
-
-    public void setRecieveNewletter(boolean recieveNewletter) {
-        this.recieveNewletter = recieveNewletter;
+    public void setReceiveNewsLetter(boolean receiveNewsLetter) {
+        this.receiveNewsLetter = receiveNewsLetter;
     }
 
     public String getPreferredLanguage() {
@@ -46,5 +32,16 @@ public class UserSettingsEntity {
     public void setPreferredLanguage(String preferredLanguage) {
         this.preferredLanguage = preferredLanguage;
     }
-}
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
+
+}

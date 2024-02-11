@@ -1,15 +1,13 @@
-package com.letcode.SecureBankSystem.service;
+package com.letcode.SecureBankSystem.service.user;
 
 import com.letcode.SecureBankSystem.bo.user.CreateUserRequest;
-import com.letcode.SecureBankSystem.bo.user.UpdateUserRequest;
-import com.letcode.SecureBankSystem.bo.user.UpdateUserStatusRequest;
 import com.letcode.SecureBankSystem.entity.UserEntity;
 import com.letcode.SecureBankSystem.repository.UserRepository;
 import com.letcode.SecureBankSystem.util.enums.Status;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 

@@ -1,6 +1,6 @@
 package com.letcode.SecureBankSystem.bo;
 
-public class Fields {
+public class FarewellRequest {
 
     private String name;
 

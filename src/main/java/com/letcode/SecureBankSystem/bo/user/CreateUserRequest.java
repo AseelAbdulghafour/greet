@@ -2,39 +2,44 @@ package com.letcode.SecureBankSystem.bo.user;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CreateUserRequest {
     private String name;
     private String email;
     private String phone;
-    private String status;
+    private String status ;
 
-    public String getName() {
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
+    public java.lang.String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(java.lang.String name) {
         this.name = name;
     }
 
-
-    public String getEmail() {
+    public java.lang.String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(java.lang.String email) {
         this.email = email;
     }
 
-    public String getPhone() {
+    public java.lang.String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(java.lang.String phone) {
         this.phone = phone;
     }
 
-    public String getStatus() {return status; }
 
-    public void setStatus(String status) {this.status = status;}
 }
