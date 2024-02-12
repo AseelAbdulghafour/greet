@@ -1,6 +1,6 @@
 package com.letcode.SecureBankSystem.config;
 
-import com.letcode.SecureBankSystem.service.auth.CustomUserDetailsServiece;
+import com.letcode.SecureBankSystem.service.auth.CustomUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

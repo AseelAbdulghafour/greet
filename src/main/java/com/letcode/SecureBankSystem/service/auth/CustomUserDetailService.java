@@ -29,7 +29,7 @@ public class CustomUserDetailService implements UserDetailsService {
         UserEntity user = userRepository.findByUsername(username)
                 .orElseThrow();
         if(user == null ){
-            throw new ChangeSetPersister.NotFoundException("User not found");
+            throw new ChangeSetPersister.NotFoundException();
         }
         CustomUserDetails userDetails = new CustomUserDetails();
         userDetails.setId(user.getId());

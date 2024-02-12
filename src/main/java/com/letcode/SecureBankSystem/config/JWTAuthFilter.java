@@ -1,6 +1,7 @@
 package com.letcode.SecureBankSystem.config;
 
 
+import com.letcode.SecureBankSystem.service.auth.CustomUserDetailService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

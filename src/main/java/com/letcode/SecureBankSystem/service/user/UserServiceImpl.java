@@ -1,6 +1,7 @@
 package com.letcode.SecureBankSystem.service.user;
 
 import com.letcode.SecureBankSystem.bo.user.CreateUserRequest;
+import com.letcode.SecureBankSystem.bo.user.UpdateUserStatusRequest;
 import com.letcode.SecureBankSystem.entity.UserEntity;
 import com.letcode.SecureBankSystem.repository.UserRepository;
 import com.letcode.SecureBankSystem.util.enums.Status;
@@ -20,7 +21,7 @@ public class UserServiceImpl implements UserService {
         UserEntity userEntity= new UserEntity();
         userEntity.setName(createUserRequest.getName());
         userEntity.setEmail(createUserRequest.getEmail());
-        userEntity.setPhonenumber(createUserRequest.getPhone());
+        userEntity.setPhoneNumber(createUserRequest.getPhone());
         userEntity.setStatus(Status.valueOf(createUserRequest.getStatus()));
         userRepository.save(userEntity);
     }
