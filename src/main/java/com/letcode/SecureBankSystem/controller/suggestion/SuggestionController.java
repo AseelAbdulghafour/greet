@@ -1,11 +1,16 @@
 package com.letcode.SecureBankSystem.controller.suggestion;
 
+import com.letcode.SecureBankSystem.bo.suggestion.CreateSuggestionRequest;
+import com.letcode.SecureBankSystem.entity.GuestSuggestionEntity;
+import com.letcode.SecureBankSystem.service.suggestions.GuestSuggestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/suggestions")
@@ -22,5 +27,10 @@ public class SuggestionController {
     public ResponseEntity<List<GuestSuggestionEntity>> handleSuggestions(@RequestBody CreateSuggestionRequest suggestionRequest) {
         List<GuestSuggestionEntity> suggestionList = suggestionService.printAndProcessSuggestion(suggestionRequest.getSuggestionText());
         return ResponseEntity.ok(suggestionList);
+    }
+    @PostMapping("/cretae-suggestion")
+    public ResponseEntity<String> processSuggestion(CreateSuggestionRequest suggestionTex){
+        suggestionService.processSuggestion(suggestionTex);
+        return ResponseEntity.ok("bravo you create a suggestion");
     }
 }

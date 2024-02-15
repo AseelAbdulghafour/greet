@@ -18,6 +18,8 @@ import java.io.IOException;
 
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
+import static org.springframework.http.HttpHeaders.AUTHORIZATION;
+
 @Configuration
 public class JWTAuthFilter extends OncePerRequestFilter {
     private static final String BEARER = "Bearer ";

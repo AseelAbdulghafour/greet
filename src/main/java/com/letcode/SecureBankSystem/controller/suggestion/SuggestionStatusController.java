@@ -1,6 +1,8 @@
 package com.letcode.SecureBankSystem.controller.suggestion;
 
+
 import com.letcode.SecureBankSystem.entity.GuestSuggestionEntity;
+import com.letcode.SecureBankSystem.service.suggestions.GuestSuggestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

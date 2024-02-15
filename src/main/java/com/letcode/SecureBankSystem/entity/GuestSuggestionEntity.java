@@ -1,5 +1,6 @@
 package com.letcode.SecureBankSystem.entity;
 
+import com.letcode.SecureBankSystem.util.enums.SuggestionsStatus;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;

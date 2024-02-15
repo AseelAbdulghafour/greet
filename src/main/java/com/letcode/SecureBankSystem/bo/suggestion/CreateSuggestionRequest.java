@@ -1,5 +1,7 @@
 package com.letcode.SecureBankSystem.bo.suggestion;
 
+import com.letcode.SecureBankSystem.util.enums.SuggestionsStatus;
+
 public class CreateSuggestionRequest {
     private String suggestionText;
     private String rate;
