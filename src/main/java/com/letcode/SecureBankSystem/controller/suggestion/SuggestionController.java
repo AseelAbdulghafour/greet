@@ -31,6 +31,6 @@ public class SuggestionController {
     @PostMapping("/cretae-suggestion")
     public ResponseEntity<String> processSuggestion(CreateSuggestionRequest suggestionTex){
         suggestionService.processSuggestion(suggestionTex);
-        return ResponseEntity.ok("bravo you create a suggestion");
+        return ResponseEntity.ok("congratilation you create a suggestion");
     }
 }
